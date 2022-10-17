@@ -1,0 +1,100 @@
+Software/Application:
+=====================
+GUI (Graphical User Interface): 5%
+-------------------------------
+Desktop Application : Google Chrome, Microsoft Office - Automation: QTP/UFT, TestComplete, Language: VBScript, Python, JS
+Web UI Application : www.google.com, facebook.com, geico.com - A: Selenium, Cypress, UFT, TestComplete, L: Java, Python, Ruby, C#, JS, VBScript
+Mobile Application : A: Appium, Appium Studio, Calabash, Qmetry, UFT, TestComplete. L: Java, Python, Ruby, C#, JS
+--------------------
+ - Native Application: 
+ - Web View: Responsive Testing
+ - Hybrid: 
+ 
+Non-GUI: 95%
+--------
+Web/Micro/API Services : A: RestAssured, Karate, GraphQL, SoapUI, Postman. L: Java, Groovy, JS,
+
+Design Diagram of Page Object Model:
+------------------------------------
+| - com.geico.qa.functional
+ 	| - src/main/java
+ 		| - base
+ 			| - BaseClass.java
+ 		| - pages
+ 			| - HomePage.java
+ 			| - Page1.java
+ 			| - Page2.java
+ 		| - common
+ 			| - CommonActions.java
+ 			| - CommonWaits.java
+ 		| - utils
+ 			| - Configuration.java
+ 	| - src/main/resource
+ 	| - src/test/java
+ 		| - auto.test
+ 			| - AutoQuoteTest.Java
+ 			| - Auto2.java
+ 			| - Auto3.java
+ 		| - home.test
+ 			| - HomeQuoteTest.java
+ 			| - Home2.java
+ 			| - Home3.java
+ 	| - src/test/resource
+ 	| - configuration
+ 		| - config.properties
+ 	testng.xml
+ 	pom.xml
+ 	
+ Extra for Learning Purpose
+  - classNotes
+
+----------------------------------------------------------------------
+Next Class
+----------------------------------------------------------------------
+User buy a product:
+-------------------
+1. user navigate to amazon.com - driver.get("www.amazon.com")
+2. click - searchbox - 
+3. sendKeys - iphone 14 pro max (Product Name)
+4. click - search icon / sendKeys Keys.ENTER
+5. product will visible - Assertion
+6. click - product
+7. product will visible - Assertion
+8. click - 1TB size
+9. click - green color
+10. click - add to cart
+
+public void click(WebElement element){ //Custom method
+try{
+	element.click(); //Selenium method
+	Log(element + " Clicked successfully");
+	}catch(NoSuchElementException e){
+		Log("Element not found");
+		Assert.fail();
+	}catch(NullPointerException e2){
+		Log("driver failed to initialized");
+	}
+}
+
+WebElement - NoSuchElementFound excelption
+WebElements - List of web elements. Return size 0
+
+IDE - Integrated Development Environment : Help us to find the syntax error
+
+Checked Exception : Exception that throws error during compile time is called checked Exception
+Unchecked Exception : Exception that will throw error during runtime
+
+Error vs Exception
+String - Sequens of char. Non-Primitive. 
+String s = "abc";
+String s1 = "abc";
+
+Maven central / Build Tools
+Dependencies:
+-------------
+UI Automation tool - Selenium (UI Actions)
+Testing / Unit Test Framework - Junit, TestNg
+WebDriverManager - it helps to initiate the driver by downing the current version of driver
+static import
+wrapper class
+

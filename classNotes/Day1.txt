@@ -77,7 +77,7 @@ Dev - https://www.dev-amazon.com/ (blue-fo/E1)
 QA/SIT - https://www.qa-amazon.com/ (System Integration Test) (hybb/E2)
 UAT - https://www.uat-amazon.com/
 Stg - https://www.stg-amazon.com/
-DEPLOYMENT - Deploy codes in different environmnet (DEV -> QA -> UAT -> STG -> PROD)
+DEPLOYMENT - Deploy codes in different environment (DEV -> QA -> UAT -> STG -> PROD)
 
 Automation - Reduce manual effort
 
@@ -85,15 +85,15 @@ Automation Testing Benefits:
 ----------------------------
 ROI - Return of Investment
 Framework
-Repeatative testing
+Repetitive testing
 In longer run it will benefits
-It can provids reports and logs
+It can provides reports and logs
 Nightly run
 24 hours
 1-Click testing
 Regression Testing
 
-Before you do Automation: (Project Level - Requiremnt Face)
+Before you do Automation: (Project Level - Requirement Face)
 ------------------------
 1. Are you going to use these test in future? - Yes
 2. Do you have to time to do automation? - Yes
@@ -102,16 +102,16 @@ Before you do Automation: (Project Level - Requiremnt Face)
 
 Test Setup:
 -----------------------------
-1. Which environment we are going to test? - QA Access, Github, AD (Active Derectory)
-2. Type of Tests - Unit Test, Integration Test, Perfomance Test
+1. Which environment we are going to test? - QA Access, GitHub, AD (Active Directory)
+2. Type of Tests - Unit Test, Integration Test, Performance Test
 3. POC (Proof of Concept) - Demo Framework -> Assurance and Idea
-4. Project Test Plan - Tracability, Report, Bug Life Cycle
+4. Project Test Plan - Tractability, Report, Bug Life Cycle
 
 Framework:
 ----------
 1. Type of testing - Regression suite, Smoke suite, Functional tests
-2. Type of Framework - TDD/BDD/DDD/KDD/MDD/LCD
-3. Design Pattern of Framework - Behaviral, Creational, Structural ex : Page Object Model, Singleton, Hybrid
+2. Type of Framework - TDD/BDD/DDD/KDD/MDD/LSD
+3. Design Pattern of Framework - Behavioral, Creational, Structural ex : Page Object Model, Singleton, Hybrid
 4. Design Diagram
 5. Reporting
 
