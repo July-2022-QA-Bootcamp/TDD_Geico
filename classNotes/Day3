@@ -1,0 +1,22 @@
+Variable declared in interface with access modifier is by default - public static final
+
+GitHub / Source Control:
+1. We Never push to master
+2. We create separate branch <a> from master
+3. Then push our code into that branch <a>
+4. From remote - GitHub/GitLab/BitBucket we raise a pull request (PR) for branch <a> to merge the code in master
+5. After PR approval the branch <a> merged into master
+6. Pull the code from master
+7. Repeat 1-6
+
+We Covered :
+1. Switching browser
+2. IConstant
+3. Logs
+4. GitHub
+
+Next Class :
+1. TestNG suite
+2. Waits
+3. More tests
+4. More Pages

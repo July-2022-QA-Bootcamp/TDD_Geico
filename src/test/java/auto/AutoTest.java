@@ -7,6 +7,6 @@ public class AutoTest extends BaseClass{
 
 	@Test
 	public void aTest() {
-		
+		homePage.autoSteps();
 	}
 }
