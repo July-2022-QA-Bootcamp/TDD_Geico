@@ -33,7 +33,7 @@ UAT - User acceptance Test
 - Network Test
 - Security Test
 - 508 Compilance Test
-- Compatabilty Testing
+- Compatibility Testing
 
 SDLC: (Software Development Life Cycle)
 =======================================
