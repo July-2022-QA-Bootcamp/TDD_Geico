@@ -6,7 +6,7 @@ GitHub / Source Control:
 3. Then push our code into that branch <a>
 4. From remote - GitHub/GitLab/BitBucket we raise a pull request (PR) for branch <a> to merge the code in master
 5. After PR approval the branch <a> merged into master
-6. Pull the code from master
+6. Pull the code from master to local
 7. Repeat 1-6
 
 We Covered :

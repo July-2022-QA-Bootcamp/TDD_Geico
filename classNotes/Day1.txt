@@ -14,9 +14,9 @@ Type of Testing:
 -- Negative Testing - Functionality not Available
 -- Boundary Testing - Edge case Testing
 
-a. Smoke - All Major functional tests - 500 (High Priority Tests)
-b. Regression - All the tests - 2000
-c. Sanity - 100 When we do not have enough time to run regression, we ran sanaty test
+a. Smoke - All Major functional tests - 500 test cases (High Priority Tests)
+b. Regression - All the available/existing functionalities tests - 2000 test cases
+c. Sanity - 100 test cases When we do not have enough time to run regression, we ran sanity test
 d. Re-Test - 1 test case, where there were bug/defect. Now it is ready to test
 UAT - User acceptance Test
 
