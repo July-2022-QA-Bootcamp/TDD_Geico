@@ -7,7 +7,7 @@ import org.testng.Reporter;
 
 public class Logs {
 
-	static Logger logger = Logger.getLogger(Logs.class.getName());
+	static Logger logger = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
 	
 	public static void log(String msg) {
 		logger.log(Level.INFO, msg);

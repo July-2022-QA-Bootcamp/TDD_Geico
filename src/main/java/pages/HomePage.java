@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import common.CommonWaits;
+import utils.data.AutoData;
+
 import static common.CommonActions.*;
 
 public class HomePage {
@@ -33,8 +35,19 @@ public class HomePage {
 	 * driver.findElement(By.xpath("(//input[@value='Continue'])[1]"))
 	 */
 
-	public void autoSteps() {
-		input(zipCodElement, "11418");
+	public void autoSteps(String zipCode) {
+		input(zipCodElement, zipCode);
+		click(autoProductElement);
+		click(startMyQuotElement);
+
+		waits.waitUntilVisible(continuElement);
+		if (isPresent(continuElement) && isDisplayed(continuElement)) {
+			click(continuElement);
+		}
+	}
+	
+	public void autoSteps(AutoData autoData) {
+		input(zipCodElement, autoData.getZip());
 		click(autoProductElement);
 		click(startMyQuotElement);
 

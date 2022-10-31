@@ -3,7 +3,11 @@
 <suite name="RegressionSuite">
   <test thread-count="5" name="RegressionTest">
     <classes>
-      <class name="auto.AutoTest"/>
+      <class name="auto.AutoTest">
+      	<methods>
+      		<include name="autoQuote"></include>
+      	</methods>
+      </class>
     </classes>
   </test> <!-- RegressionTest -->
 </suite> <!-- RegressionSuite -->
