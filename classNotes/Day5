@@ -1,0 +1,32 @@
+TestNG xml
+- parameter
+- methods
+- include
+- @Parameters
+
+Why we use this?
+- When class/global variables carry the same name as local variables,
+	to distinguish between global and local variables we use this in-front of global variables
+	
+POJO class
+- Plain Old Java Object, POJO class is when a class do not have any dependency on any other class.
+
+Priority attributes in @Test
+- priority = O will always run first
+- no priority define will run after priority = O
+- if no priority has alphabetical order on top of priority = 0, then no priority will run first
+- alphabetical order matters
+- rest all priority will run after top two conditions
+
+@groups in @Test attributes
+- we can define more than one groups for a test
+- to run we use <groups> inside <groups> we add <run>, inside <run> we can use <include> or <exclude> any groups
+
+@retryAnalizer in @Test attributes with the class which has been implemented IRetryAnalyzer from TestNG
+- to run the failed tests again
+
+Next Class:
+- Extent Reports
+- Some Code for Home
+- Cross Browser Tests
+
