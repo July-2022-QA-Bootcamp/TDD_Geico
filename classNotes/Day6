@@ -1,0 +1,20 @@
+TestNG annotation hierarchy:
+
+@BeforeSuite
+@BeforeTest
+@BeforeClass
+@BeforeMethod
+
+@Test(Attributes(enable, alwaysRun, groups))
+
+@AfterMethod
+@AfterClass
+@AfterTest
+@AfterSuite
+
+Cross Browser Testing from local: Running multiple tests with different parameter for browser name and using @Parameters
+ annotation, where our driver will initiate based on the browser value.
+
+Next Class:
+- Extent Report
+- Cross Browser from remote

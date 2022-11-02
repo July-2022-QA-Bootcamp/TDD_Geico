@@ -2,6 +2,7 @@ Variable declared in interface with access modifier is by default - public stati
 
 GitHub / Source Control:
 1. We Never push to master
+Must Pull code from remote master to local master , so you can get the latest update
 2. We create separate branch <a> from master
 3. Then push our code into that branch <a>
 4. From remote - GitHub/GitLab/BitBucket we raise a pull request (PR) for branch <a> to merge the code in master
