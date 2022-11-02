@@ -1,4 +1,4 @@
-package pages;
+package pages.common;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -6,7 +6,6 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import common.CommonWaits;
 import utils.data.AutoData;
-
 import static common.CommonActions.*;
 
 public class HomePage {
@@ -24,8 +23,12 @@ public class HomePage {
 	WebElement zipCodElement;
 	@FindBy(xpath = "//div[@class='product-cards']/div[@class='card' and contains(.,'Auto')]")
 	WebElement autoProductElement;
+	@FindBy(xpath = "(//div[@class='card' and @data-product='homeowners'])[1]")
+	WebElement homeownersElement;
 	@FindBy(id = "bundleModalBtn")
-	WebElement startMyQuotElement;
+	WebElement autoStartMyQuotElement;
+	@FindBy(id = "submitBtn")
+	WebElement homeStartMyQuoteElement;
 	@FindBy(xpath = "(//input[@value='Continue'])[1]")
 	WebElement continuElement;
 
@@ -38,7 +41,7 @@ public class HomePage {
 	public void autoSteps(String zipCode) {
 		input(zipCodElement, zipCode);
 		click(autoProductElement);
-		click(startMyQuotElement);
+		click(autoStartMyQuotElement);
 
 		waits.waitUntilVisible(continuElement);
 		if (isPresent(continuElement) && isDisplayed(continuElement)) {
@@ -46,10 +49,17 @@ public class HomePage {
 		}
 	}
 	
+	public void homeSteps(String zipCode) {
+		input(zipCodElement, zipCode);
+		click(homeownersElement);
+		sleep(1);
+		click(homeStartMyQuoteElement);
+	}
+	
 	public void autoSteps(AutoData autoData) {
 		input(zipCodElement, autoData.getZip());
 		click(autoProductElement);
-		click(startMyQuotElement);
+		click(autoStartMyQuotElement);
 
 		waits.waitUntilVisible(continuElement);
 		if (isPresent(continuElement) && isDisplayed(continuElement)) {

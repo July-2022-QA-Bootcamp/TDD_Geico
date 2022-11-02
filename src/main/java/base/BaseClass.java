@@ -7,9 +7,14 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Parameters;
+
 import io.github.bonigarcia.wdm.WebDriverManager;
-import pages.AboutYou;
-import pages.HomePage;
+import pages.auto.AboutYou;
+import pages.common.HomePage;
+import pages.home.AddressPage;
+import pages.home.DOBPage;
+import pages.home.NamePage;
 import utils.Configuration;
 import static utils.IConstant.*;
 import java.time.Duration;
@@ -20,22 +25,25 @@ public class BaseClass {
 	WebDriver driver;
 	protected HomePage homePage;
 	protected AboutYou aboutYou;
+	protected AddressPage addressPage;
+	protected NamePage namePage;
+	protected DOBPage dobPage;
 
+	@Parameters("browser")
 	@BeforeMethod
-	public void setUpDriver() {
-		initDriver();
+	public void setUpDriver(String browser) {
+		initDriver(browser);
 		driver.manage().window().maximize();
 		driver.get(config.getProperty((URL)));
 		long pageLoadTime = Long.parseLong(config.getProperty(PAGELOAD_WAIT));
 		long implicitWait = Long.parseLong(config.getProperty(IMPLICIT_WAIT));
 		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(pageLoadTime));
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(implicitWait));
-		initClasses();
+		initObjectClasses();
 	}
 
-	private void initDriver() {
-		String browserName = config.getProperty(BROWSER);
-		switch (browserName) {
+	private void initDriver(String browser) {
+		switch (browser) {
 		case CHROME:
 			WebDriverManager.chromedriver().setup();
 			driver = new ChromeDriver();
@@ -58,9 +66,12 @@ public class BaseClass {
 		}
 	}
 	
-	private void initClasses() {
+	private void initObjectClasses() {
 		homePage = new HomePage(driver);
 		aboutYou = new AboutYou(driver);
+		addressPage = new AddressPage(driver);
+		namePage = new NamePage(driver);
+		dobPage = new DOBPage(driver);
 	}
 	
 	public WebDriver getDriver() {
@@ -69,6 +80,6 @@ public class BaseClass {
 
 	@AfterMethod
 	public void closingDriverSession() {
-		getDriver().quit();
+		//getDriver().quit();
 	}
 }

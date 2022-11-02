@@ -1,11 +1,13 @@
 package common;
 
+import static org.testng.Assert.*;
 import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.testng.Assert;
+import org.openqa.selenium.support.ui.Select;
+
 import reporting.Logs;
 
 public class CommonActions {
@@ -17,7 +19,7 @@ public class CommonActions {
 		} catch (NoSuchElementException | NullPointerException e) {
 			e.printStackTrace();
 			Logs.log("ELEMENT NOT FOUND ---> " + element);
-			Assert.fail();
+			fail();
 		}
 	}
 	
@@ -28,7 +30,7 @@ public class CommonActions {
 		} catch (NoSuchElementException | NullPointerException e) {
 			e.printStackTrace();
 			Logs.log("ELEMENT NOT FOUND ---> " + element);
-			Assert.fail();
+			fail();
 		}
 	}
 	
@@ -61,6 +63,36 @@ public class CommonActions {
 		}else {
 			Logs.log(element + " <--- NOT VISIBLE");
 			return false;
+		}
+	}
+	
+	public static void assertGetText(WebElement element, String expected) {
+		if(element != null) {
+			Logs.log(element + " <--- has text = " + element.getText());
+			assertEquals(element.getText(), expected);
+		}else {
+			Logs.log("ELEMENT NOT FOUND -->" + element);
+			fail();
+		}
+	}
+	
+	public static void sleep(int secs) {
+		try {
+			Thread.sleep(secs);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public static void selectDropdown(WebElement element,String value) {
+		try {
+			Select select = new Select(element);
+			select.selectByValue(value);
+			Logs.log(value + " : has been selected for ---> " + element);
+		} catch (NoSuchElementException | NullPointerException e) {
+			e.printStackTrace();
+			Logs.log("ELEMENT NOT FOUND -->" + element);
+			fail();
 		}
 	}
 }
