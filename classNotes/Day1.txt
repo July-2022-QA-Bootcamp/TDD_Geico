@@ -44,18 +44,19 @@ Iterative -
 V-Sahpe
 Big Bang
 Agail - Scrum (Sprint), Kanban (priority borad)
+JIRA / Rally - Project Management Tool and Defect/Bug tracking tool
 
 SDLC Sategs:
 -------
 DEV			| 	QA(STLC-Software Testing Life Cycle)
-1. Requirment Analysis  | Requirment Analysis (Time Estimation(Story Points))
+1. Requirement Analysis  | Requirment Analysis (Time Estimation(Story Points))
 2. Design (Wiremock-UI)	| Design Test Plan (Acceptence Criteria, Exit Criteria, In scope, Out of scope)
 3. Development		| Develop the scripts/ Write Test Cases
 4. Testing (Unit Test)	| SIT (System Integration), Regression/Sanity, Smoke, Re-Test
-5. UAT			| Signing of report, Test/Requiremnt Tracability Matrix(RTM) - Test Cases aganinst Requiremnt
+5. UAT			| Signing of report, Test/Requiremnt Tractability Matrix(RTM) - Test Cases against Requirement
 6. Deployment/Release
 
-Scrum Activities: (2-3 weeks)
+Sprint Activities: (2-3 weeks)
 -----------------------------
 Backlog - Requiremnets 
 Product Backlog - All the requiremnt of the project

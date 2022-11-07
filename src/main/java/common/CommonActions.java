@@ -23,6 +23,17 @@ public class CommonActions {
 		}
 	}
 	
+	public static void clear(WebElement element) {
+		try {
+			element.clear();
+			Logs.log("Clearing element ---> " + element);
+		} catch (NoSuchElementException | NullPointerException e) {
+			e.printStackTrace();
+			Logs.log("ELEMENT NOT FOUND ---> " + element);
+			fail();
+		}
+	}
+	
 	public static void click(WebElement element) {
 		try {
 			element.click();
