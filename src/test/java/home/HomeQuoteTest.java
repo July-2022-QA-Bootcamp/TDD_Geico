@@ -15,7 +15,7 @@ public class HomeQuoteTest extends BaseClass{
 		emailPage.emailPageSteps("What is your email address? ?","test@test.com");
 	}
 	
-	@Test
+	@Test(enabled = false)
 	public void homeownersQuoteFlowInvalidEmailCheck() {
 		homePage.homeSteps("11423");
 		addressPage.addressPageSteps("What is the address of the home you want to insure? ", "10021 202nd Street", "2B", "HOLLIS");
@@ -27,7 +27,7 @@ public class HomeQuoteTest extends BaseClass{
 		emailPage.validateInvalidEmail("Please enter a valid email address.", "test@test");
 	}
 	
-	@Test
+	@Test(enabled = false)
 	public void homeownersQuoteFlowInvalidEmailCheckFail() {
 		homePage.homeSteps("11423");
 		addressPage.addressPageSteps("What is the address of the home you want to insure? ", "10021 202nd Street", "2B", "HOLLIS");
