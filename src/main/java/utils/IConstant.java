@@ -13,4 +13,7 @@ public interface IConstant {
 	String FIREFOX = "firefox";
 	String EDGE = "edge";
 	String SAFARI = "safari";
+	
+	String EXCEL = "excelFile";
+	String SHEET = "sheetName";
 }

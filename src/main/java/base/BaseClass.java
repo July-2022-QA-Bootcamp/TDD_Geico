@@ -39,7 +39,7 @@ import java.util.Date;
 
 public class BaseClass {
 
-	Configuration config = new Configuration();
+	protected Configuration config = new Configuration();
 	WebDriver driver;
 	ExtentReports extent;
 	protected HomePage homePage;
@@ -140,6 +140,12 @@ public class BaseClass {
 	public String takeScreenShot(String testName) {
 		Date date = new Date();
 		SimpleDateFormat format = new SimpleDateFormat("_MMddyyyy_hhmmss");
+		File folder = new File("test-output/screenShots");
+		if(!folder.exists()) {
+			String path = new File("test-output").getAbsolutePath();
+			new File(path + "/screenShots").mkdir();
+			new File(path + "/screenShots").setExecutable(true);
+		}
 		File localFile = new File("test-output/screenShots/" + testName + format.format(date) +".png");
 		TakesScreenshot ss = (TakesScreenshot) driver;
 		File driverSS = ss.getScreenshotAs(OutputType.FILE);
@@ -147,6 +153,7 @@ public class BaseClass {
 			Files.copy(driverSS, localFile);
 			Logs.log("Screen Shot captured at \n" + localFile.getAbsolutePath());
 		}catch (IOException e) {
+			e.printStackTrace();
 			Logs.log("Error occurs during taking ScreenShot..!");
 		}
 		return localFile.getAbsolutePath();
