@@ -1,9 +1,8 @@
 package practice;
 
+import org.testng.annotations.Test;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-
-import org.testng.annotations.Test;
 
 public class StringMan {
 
