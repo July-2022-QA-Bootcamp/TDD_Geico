@@ -1,7 +1,7 @@
 package home;
 
-import org.testng.Assert;
 import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
 import base.BaseClass;
 import reporting.Logs;
 import utils.retry.RetryClass;
@@ -26,7 +26,7 @@ public class HomeTest extends BaseClass{
 	@Test(groups = "home", dependsOnGroups = "home", alwaysRun = true, retryAnalyzer = RetryClass.class)
 	public void homeQuote4() {
 		Logs.log("No priority 4");
-		Assert.fail();
+		AssertJUnit.fail();
 	}
 	
 	@Test(groups = "home", dependsOnMethods = "homeQuote3", ignoreMissingDependencies = true)

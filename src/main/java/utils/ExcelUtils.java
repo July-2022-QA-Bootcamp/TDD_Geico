@@ -35,10 +35,11 @@ public class ExcelUtils {
 	}
 
 	public Map<Integer, Map<String, String>> getMapData() {
+		
 		Map<Integer, Map<String, String>> map = new HashMap<>();
 
 		int executionCell = getExecutionCellNum();
-		System.out.println("Execution cell num : " + executionCell);
+		//System.out.println("Execution cell num : " + executionCell);
 		for (int i = 0; i <= sheet.getLastRowNum(); i++) {
 			Map<String, String> rowMap = new HashMap<>();
 			boolean executionFlag = false;

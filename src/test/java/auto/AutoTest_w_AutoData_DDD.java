@@ -10,6 +10,7 @@ import static utils.IConstant.*;
 
 public class AutoTest_w_AutoData_DDD extends BaseClass{
 
+	@Test
 	@DataProvider(name = "autoData")
 	public Object[][] testData(){
 		ExcelUtils utils = new ExcelUtils(config.getProperty(EXCEL), config.getProperty(SHEET));
@@ -26,6 +27,7 @@ public class AutoTest_w_AutoData_DDD extends BaseClass{
 		return objects;
 	}
 	
+	@Test
 	@DataProvider(name = "autoDataMap")
 	public Object[][] testDataMap(){
 		ExcelUtils utils = new ExcelUtils(config.getProperty(EXCEL), config.getProperty(SHEET));
@@ -40,13 +42,19 @@ public class AutoTest_w_AutoData_DDD extends BaseClass{
 		return objects;
 	}
 	
+	@Test(enabled = true, dataProvider = "autoData")
+	public void autoQuoteWithAutoDataNoParam(AutoData autoData) {
+		homePage.autoSteps(autoData);
+		aboutYou.aboutYouSteps(autoData);
+	}
+	
 	@Test(enabled = false, dataProvider = "autoData")
 	public void autoQuoteWithAutoData(AutoData autoData) {
 		homePage.autoSteps(autoData.getZip());
 		aboutYou.aboutYouSteps(autoData.getDob(), autoData.getFirstName(), autoData.getLastName());
 	}
 	
-	@Test(enabled = true, dataProvider = "autoDataMap")
+	@Test(enabled = false, dataProvider = "autoDataMap")
 	public void autoQuoteWithAutoDataMap(Map<String, String> map) {
 		homePage.autoSteps(map.get("Zip Code"));
 		aboutYou.aboutYouSteps(map.get("DOB"), 

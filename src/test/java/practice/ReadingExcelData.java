@@ -6,12 +6,20 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 
 import utils.ExcelUtils;
 
@@ -21,7 +29,9 @@ public class ReadingExcelData {
 		//readSimpleFile();
 		//excelOps();
 		//excelUtilsUnitTests();
-		fileOps();
+		//fileOps();
+		//readCSV();
+		jsonRead();
 	}
 	
 	public static void excelUtilsUnitTests() {
@@ -69,5 +79,37 @@ public class ReadingExcelData {
 		new File(path+"/screenShots").mkdir();
 		
 		System.out.println(new File(path + "/screenShots").exists());
+	}
+	
+	public static void readCSV() throws IOException {
+		File file = new File("src/main/resources/HomeData.csv");
+		BufferedReader reader = new BufferedReader(new FileReader(file));
+		String lineString = null;
+		List<List<String>>lists = new ArrayList<>();
+		while((lineString = reader.readLine()) != null) {
+			String[] array = lineString.split(",");
+			lists.add(Arrays.asList(array));
+			//System.out.println(lineString);
+		}
+		lists.remove(0);
+		for (Iterator iterator = lists.iterator(); iterator.hasNext();) {
+			List<String> list = (List<String>) iterator.next();
+			System.out.println(list);
+		}
+	}
+	
+	public static void jsonRead() throws FileNotFoundException {
+		FileReader file = new FileReader("src/main/resources/HomeData.json");
+		
+		JsonObject jsonObject = JsonParser.parseReader(file).getAsJsonObject();
+		
+		Map<String, String>map = new HashMap<>();
+		map.put("Zip Code", jsonObject.get("Zip Code").getAsString());
+		map.put("Title1", jsonObject.get("Title1").getAsString());
+		map.put("Address1", jsonObject.get("Address1").getAsString());
+		
+		for(String key:map.keySet()) {
+			System.out.println(key +":"+map.get(key));
+		}
 	}
 }

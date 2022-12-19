@@ -1,7 +1,7 @@
 package auto;
 
-import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
+import org.testng.annotations.Parameters;
 import base.BaseClass;
 
 public class AutoTest extends BaseClass{
